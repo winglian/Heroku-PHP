@@ -1,5 +1,8 @@
 sed -i 's/Listen 80/Listen '$PORT'/' /app/apache/conf/httpd.conf
 sed -i 's/^DocumentRoot/# DocumentRoot/' /app/apache/conf/httpd.conf
+sed -i 's/^ServerLimit 1/ServerLimit 8/' /app/apache/conf/httpd.conf
+sed -i 's/^MaxClients 1/MaxClients 8/' /app/apache/conf/httpd.conf
+
 for var in `env|cut -f1 -d=`; do
   echo "PassEnv $var" >> /app/apache/conf/httpd.conf;
 done

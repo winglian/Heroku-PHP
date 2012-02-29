@@ -1,1 +1,1 @@
-web:    sh www/conf/boot.sh
+web:    sh www/conf/web-boot.sh
